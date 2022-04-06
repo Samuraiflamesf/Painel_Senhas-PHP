@@ -7,4 +7,13 @@ async function gerarSenha(tipoSenha){
     // Ler os dados retornados pelo PHP
     const resposta = await dados.json();
     console.log(resposta);
+    // IF quando houver erro
+    if(resposta['status']){
+        //enviar a msg de erro para seletor "msgAlerta"
+        document.getElementById("msgAlerta").innerHTML = resposta['msg'];
+    }else{
+        //enviar a msg de erro para seletor "msgAlerta"
+        document.getElementById("msgAlerta").innerHTML = resposta['msg'];
+    }
+    
 }

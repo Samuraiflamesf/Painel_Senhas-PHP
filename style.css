@@ -6,7 +6,6 @@
     font-family: 'Montserrat';
 }
 html,body {
-    display: grid;
     height: 100%;
     place-items: center;
     text-align: center;
@@ -14,20 +13,45 @@ html,body {
     background-color: #111;
     color: #fff;
   }
-.page-title {
+.titulo {
     color:#ffffff;
     margin: 0 0 5px;
+    padding-top:20px ;
   }
-.page-subtitle {
+.subtitulo {
     color:#ffffff;
     margin-top: 5px;
   }
-.wrapper{
-    width: auto;
-    height: auto;
-    background: #8a8be9;
-    border-radius: 10px;
-}  
+.div_time{
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 400px;
+    width: 250px;
+    background: #8889B9;
+    font-size: 21px;
+
+}
+#statusSenha{
+  background: #8a8be9;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 1px;
+  width: 250px;
+
+}
+#msgAlerta{
+  font-size: 35px;
+  letter-spacing: 1px;
+  font-weight: 350;
+}
+.corpo .display #relogio{
+    line-height: 55px;
+    color: rgb(255, 255, 255);
+    font-size: 50px;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
 .container {
     text-align: center;
     padding: 20px;

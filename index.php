@@ -21,12 +21,13 @@
       <!-- Chamar a função para mostra erros
    -->
    <div >
-        <p id="statusSenha">Senha Chamada:<br>
-        <span id="msgAlerta">-------</span></p>
+        <!-- Receber a mensagem de erro do JavaScript -->
+        <p id="statusSenha"><span id="msgAlerta">-------</span>
+        <!-- Receber a senha do JavaScript -->
+        <br>Senha Chamada: <span id="senhaGerada"></span></p><br>
     </div>
     
-    <!--Chamar a função "gerarSenha" do Js para atendimento Dispensação
-    -->
+    
     <div class='container'>
     <p>
         Selecione o consutorio atual:
@@ -40,11 +41,11 @@
 
     </select> 
     </p>
+    <!--Chamar a função "gerarSenha" do Js para atendimento Dispensação-->
     <p><button type="button" onclick="gerarSenha(1)">Dispensação</button></p>
     <p><button type="button" onclick="gerarSenha(2)">Dispensação Preferencial</button></p>
-        <!--
-        Chamar a função "gerarSenha" do Js para atendimento Farmaceutico
-    -->
+    <!--
+    Chamar a função "gerarSenha" do Js para atendimento Farmaceutico-->    
     <p><button type="button" onclick="gerarSenha(3)">Farmacêutico</button></p>
     <p><button type="button" onclick="gerarSenha(4)">Farmacêutico Preferencial</button></p>
     </div>

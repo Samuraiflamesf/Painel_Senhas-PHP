@@ -1,14 +1,15 @@
 <?php
 
-//Incluir a conexao com o BD
+// Incluir a conexao com o BD
 include_once './conexao.php';
 
-// Recebe o tipo que a senha deve ser gerada
+// Receber o tipo que a senha deve ser gerada
 $tipo = filter_input(INPUT_GET, 'tipo', FILTER_SANITIZE_NUMBER_INT);
 
 // Verifica se vem o tipo de senha que deve ser gerada
-if(!empty($tipo)){
-// Criar a QUERY para recuperar os registros do BD
+if (!empty($tipo)) {
+
+    // Criar a QUERY para recuperar os registros do BD
     $query_senha = "SELECT id, nome_senha 
                     FROM senhas
                     WHERE sits_senha_id=:sits_senha_id
@@ -18,7 +19,7 @@ if(!empty($tipo)){
 
     // Preparar a QUERY
     $result_senha = $conn->prepare($query_senha);
-    
+
     // Substituir o link pelo valor
     $result_senha->bindValue(':sits_senha_id', 1, PDO::PARAM_INT);
     $result_senha->bindParam(':tipos_senha_id', $tipo, PDO::PARAM_INT);
@@ -26,19 +27,50 @@ if(!empty($tipo)){
     // Executar a QUERY
     $result_senha->execute();
 
-    //Verificar se encontrou alguma senha no bd
-    if(($result_senha) and ($result_senha->rowCount() != 0)){
+    // Verificar se encontrou algum registro no BD
+    if (($result_senha) and ($result_senha->rowCount() != 0)) {
 
-        $retorno = ['status' => false, 'msg' => "<p style='color: #00ff ;'>Senha criada!</p>"];
-    
-    }else{
-        $retorno = ['status' => true, 'msg' => "<p style='color: #f00;'>Erro: Senha esgotadas</p>"];   
+        // Ler as informações retornada do banco de dados
+        $row_senha = $result_senha->fetch(PDO::FETCH_ASSOC);
+
+        // Extrair para imprimir através da chave no array
+        extract($row_senha);
+
+        // Criar a QUERY cadastrar a senha gerada
+        $query_senha_gerada = "INSERT INTO senhas_geradas (senha_id, sits_senha_id, created) VALUES ($id, 2, NOW())";
+
+        // Preparar a QUERY
+        $cad_senha_gerada = $conn->prepare($query_senha_gerada);
+
+        // Executar a QUERY
+        $cad_senha_gerada->execute();
+
+        // Retornar TRUE quando cadastrou a senha e retornar FALSE quando não consiguir cadastrar
+        if ($cad_senha_gerada->rowCount()) {
+
+            //Alterar o status da senha
+            $query_edit_senha = "UPDATE senhas SET sits_senha_id=2 WHERE id=$id LIMIT 1";
+
+            // Preparar a QUERY
+            $edit_senha = $conn->prepare($query_edit_senha);
+
+            // Executar a QUERY
+            $edit_senha->execute();
+
+            // Criar o array com a posição indicando que não houve erro e retorna a senha
+            $retorna = ['status' => true, 'nome_senha' => "<span style='color: green;'>$nome_senha</span>"];
+        } else {
+            // Criar o array com a posição indicando que houve erro e a mensagem de erro
+            $retorna = ['status' => false, 'msg' => "<p style='color: #f00;'>Erro: Senha não gerada!</p>"];
+        }
+    } else {
+        // Criar o array com a posição indicando que houve erro e a mensagem de erro
+        $retorna = ['status' => false, 'msg' => "<p style='color: #f00;'>Erro: Senhas esgotadas!</p>"];
     }
-
-}else{
-    // Criar o arry com a posição indicando que houve erro e a mensagem de erro
-    $retorno = ['status' => true, 'msg' => "<p style='color: #f00;'>Erro: Senha não gerada!</p>"];
+} else {
+    // Criar o array com a posição indicando que houve erro e a mensagem de erro
+    $retorna = ['status' => false, 'msg' => "<p style='color: #f00;'>Erro: Senha não gerada!</p>"];
 }
 
-//Retorna os dados para Js
-echo json_encode($retorno);
+// Retornar os dados para o JavaScript
+echo json_encode($retorna);

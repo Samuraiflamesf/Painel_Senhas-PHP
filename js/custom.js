@@ -11,6 +11,7 @@ async function gerarSenha(tipoSenha) {
     // Acessar o IF quando houve erro no arquivo "gerar_senha.php"
     if (!resposta['status']) {
         // Enviar a mensagem de erro para o SELETOR "msgAlerta"
+        alert(resposta['msg']);
         document.getElementById("msgAlerta").innerHTML = resposta['msg'];
 
         // Apagar a senha gerada anteriormente

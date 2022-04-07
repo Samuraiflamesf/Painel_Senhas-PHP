@@ -48,6 +48,10 @@
     Chamar a função "gerarSenha" do Js para atendimento Farmaceutico-->    
     <p><button type="button" onclick="gerarSenha(3)">Farmacêutico</button></p>
     <p><button type="button" onclick="gerarSenha(4)">Farmacêutico Preferencial</button></p>
+    <!--
+    Chamar a função "gerarSenha" do Js para atendimento ação judicial--> 
+    <p><button type="button" onclick="gerarSenha(5)">Ação Judicial</button></p>
+    <p><button type="button" onclick="gerarSenha(6)">Ação Judicial - Extra</button></p>
     </div>
  
     <br><br><br><br>

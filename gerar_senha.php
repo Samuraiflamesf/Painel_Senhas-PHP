@@ -58,14 +58,14 @@ if (!empty($tipo)) {
             $edit_senha->execute();
 
             // Criar o array com a posição indicando que não houve erro e retorna a senha
-            $retorna = ['status' => true, 'nome_senha' => "<span style='color: green;'>$nome_senha</span>"];
+            $retorna = ['status' => true, 'nome_senha' => "<span style='color: white;line-height: 55px;font-weight: 500;font-size: 40px;'><br>$nome_senha</span>"];
         } else {
             // Criar o array com a posição indicando que houve erro e a mensagem de erro
             $retorna = ['status' => false, 'msg' => "<p style='color: #f00;'>Erro: Senha não gerada!</p>"];
         }
     } else {
         // Criar o array com a posição indicando que houve erro e a mensagem de erro
-        $retorna = ['status' => false, 'msg' => "<p style='color: #f00;'>Erro: Senhas esgotadas!</p>"];
+        $retorna = ['status' => false, 'msg' => "Erro: Senhas esgotadas!"];
     }
 } else {
     // Criar o array com a posição indicando que houve erro e a mensagem de erro

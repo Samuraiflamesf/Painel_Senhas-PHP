@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paninel</title>
+    <title>Gerar Senha</title>
     <link rel="stylesheet" href="style.css" />
     <script type="text/javascript" src="js/time.js"></script>
 </head>
@@ -24,38 +24,41 @@
         <!-- Receber a mensagem de erro do JavaScript -->
         <p id="statusSenha"><span id="msgAlerta">-------</span>
         <!-- Receber a senha do JavaScript -->
-        <br>Senha Chamada: <span id="senhaGerada"></span></p><br>
+        <br>Senha Gerarda: <span id="senhaGerada"></span></p><br>
     </div>
-    
-    
+      
     <div class='container'>
-    <p>
-        Selecione o consutorio atual:
-        <select name="consutorio">
-        <option value="consutorio_01">1</option>
-        <option value="consutorio_02">2</option>
-        <option value="consutorio_03">3</option>
-        <option value="consutorio_04">4</option>
-        <option value="consutorio_05">5</option>
-        <option value="consutorio_06">6</option>
-
-    </select> 
-    </p>
     <!--Chamar a função "gerarSenha" do Js para atendimento Dispensação-->
-    <p><button type="button" onclick="gerarSenha(1)">Dispensação</button></p>
-    <p><button type="button" onclick="gerarSenha(2)">Dispensação Preferencial</button></p>
+    <div class="dispensação">
+        <br><h3>Gerar Senhas Dispensação</h3>
+    <a><button type="button" onclick="gerarSenha(1)">Dispensação</button></a>
+    <a><button type="button" onclick="gerarSenha(2)">Dispensação Preferencial</button></a>
+    </div>
     <!--
     Chamar a função "gerarSenha" do Js para atendimento Farmaceutico-->    
-    <p><button type="button" onclick="gerarSenha(3)">Farmacêutico</button></p>
-    <p><button type="button" onclick="gerarSenha(4)">Farmacêutico Preferencial</button></p>
+    <div class="Farmaceutico">
+        <br><h3>Gerar Senhas para Farmacêuticos</h3>
+    <a><button type="button" onclick="gerarSenha(3)">Farmacêutico</button></a>
+    <a><button type="button" onclick="gerarSenha(4)">Farmacêutico Preferencial</button></a>
+    </div>
     <!--
     Chamar a função "gerarSenha" do Js para atendimento ação judicial--> 
-    <p><button type="button" onclick="gerarSenha(5)">Ação Judicial</button></p>
-    <p><button type="button" onclick="gerarSenha(6)">Ação Judicial - Extra</button></p>
-    </div>
- 
-    <br><br><br><br>
-    <p>2022 - @BernardoNogueira8</p>
-    <script src="js/custom.js"></script>
+    <div class="acaojudicial">
+    <br><h3>Gerar Senhas para Ação Judicial</h3>
+    <a><button type="button" onclick="gerarSenha(5)">Ação Judicial</button></a>
+    <a><button type="button" onclick="gerarSenha(6)">Ação Judicial - Extra</button></a>
+    </div>  
+
+</div>
+<div class="footer">
+        <br><br>
+        <a href="index.php"><button type="button">Gerar Senha</button></a>
+        <a href="paniel.php"><button type="button" >Painel</button></a>
+        <a href="atendimento.php"><button type="button">Chamar Senha</button></a>
+        <br><br>
+        <p>2022 - @BernardoNogueira8</p>
+        <br><br>
+</div>
+<script src="js/custom.js"></script>
 </body>
 </html>

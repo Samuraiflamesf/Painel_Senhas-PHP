@@ -5,6 +5,7 @@
     box-sizing: border-box;
     font-family: 'Montserrat';
 }
+
 html,body {
     height: 100%;
     place-items: center;
@@ -12,16 +13,20 @@ html,body {
     min-height: 400px;
     background-color: #111;
     color: #fff;
-  }
+    position:relative;
+}
+
 .titulo {
     color:#ffffff;
     margin: 0 0 5px;
     padding-top:20px ;
-  }
+}
+
 .subtitulo {
     color:#ffffff;
     margin-top: 5px;
-  }
+}
+
 .div_time{
     margin: 0 auto;
     padding: 10px;
@@ -29,21 +34,22 @@ html,body {
     width: 250px;
     background: #8889B9;
     font-size: 21px;
-
 }
+
 #statusSenha{
   background: #8a8be9;
   margin: 0 auto;
   padding: 10px;
   border-radius: 1px;
   width: 250px;
-
 }
+
 #msgAlerta{
   font-size: 20px;
   letter-spacing: 1px;
   font-weight: 350;
 }
+
 .corpo .display #relogio{
     line-height: 55px;
     color: rgb(255, 255, 255);
@@ -56,17 +62,53 @@ html,body {
     text-align: center;
     padding: 20px;
     height: auto;
-  }
+}
 
 button {
     margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
     border: none;
     padding: 10px 20px;
     background-color: #8889B9;
     border-radius: 5px;
     color: #fff;
     cursor: pointer;
-  }
+}
+
 button:hover {
     background: #8a8be9;
-  }
+}
+
+.footer {
+  text-align:center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 0px;
+  width: 100%;
+  background-color: #111;
+}
+  
+.navChamar{
+  text-align: center;
+  padding: 0px;
+
+}
+.flex-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll{
+  margin-top: 20px;
+  text-align: center;
+  padding: 5px;
+  padding-bottom: 50px;
+  width: 800px;
+  height: 350px;
+  overflow:auto;
+  margin-bottom: 10px;
+}

@@ -50,7 +50,7 @@ if (!empty($tipo)) {
 
 
         // Não houve não erro e a mensagem com senha
-        $retorna = ['status' => true, 'msg' => "<p style='color: green;'>Senha chamada: $nome_senha</p>",
+        $retorna = ['status' => true, 'msg' => "<p style='color: #000;'>Senha chamada: $nome_senha</p>",
     "id_senha_gerada"=>$id_senha_gerada];
     } else {
 

@@ -66,3 +66,4 @@ if (!empty($tipo)) {
 
 // Retornar os dados para o JavaScript
 echo json_encode($retorna);
+?>

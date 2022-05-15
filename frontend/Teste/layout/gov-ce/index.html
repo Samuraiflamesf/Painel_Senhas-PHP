@@ -1,0 +1,56 @@
+        
+<div id="layout-content">
+
+    <!-- Titulo do Painel - Informacoes gerais -->
+    <div class="topo">
+        <h2>Bem-vindo ao</h2>
+        <h1 id="nome-empresa-painel">CIMEB - Centro</h1>
+        <div class="container-datahora">
+            <div class="clock">
+              <ul class="time">
+                  <li id="hours"></li>
+                  <li id="point">:</li>
+                  <li id="min"></li>
+              </ul>
+            </div>
+            <div class="container-date">
+                <div id="date"></div>
+                <div id="day"></div>   
+            </div>
+        </div>
+    </div>
+
+    <div id="senha-container">
+        <div id="mensagem">
+            <span>{{ ultima.servico }}</span>
+        </div>
+        <div class="middle">
+            <div class="left">
+                <div id="senha" class="blink">
+                    <span>{{ ultima.texto }}</span>
+                </div>
+            </div>
+            <div class="right">
+                <div id="local" class="local">
+                    <span>{{ ultima.local }}</span>
+                </div>
+                <div id="local-numero" class="numero-local">
+                    <span>{{ ultima.numeroLocal }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="historico">
+        <div class="senhas">
+            <div class="senha-chamada {{ senha.styleClass }}" ng-repeat="senha in anteriores | limitTo: 5">
+                <div class="senha">
+                    <span>{{ senha.texto }}</span>
+                </div>
+                <div class="local">
+                    <span>{{ senha.local }}: {{ senha.numeroLocal }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="error">Resolução não suportada</div>

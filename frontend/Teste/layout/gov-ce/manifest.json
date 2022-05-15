@@ -1,0 +1,14 @@
+{
+    "name": "Gov-CE",
+    "description": "Layout padrão do Governo do Ceará",
+    "authors": [
+        {
+            "name": "Pedro Costa", 
+            "email": "pedro@plcosta.com",
+            "homepage": "http://plcosta.com"
+        }
+    ],
+    "events": {
+        "onload": "DataHora"
+    }
+}

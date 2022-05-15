@@ -1,0 +1,45 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+html,body {
+    height: 100%;
+    place-items: center;
+    text-align: center;
+    background-color: #111;
+    color: #fff;
+    position:relative;
+}
+.fundoGradient{
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    background: linear-gradient(39deg,#002135,#2fc1ff,#0fddb0);
+    background-size:200% 200%;
+    animation: colors 15s ease infinite;
+}
+
+@keyframes colors{
+    0%{
+    background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+
+}   
+.bem-vindo{
+   width: 400px;
+   padding: 10px;
+   
+}
+.bem-vindo: h1{
+    padding: 10px;
+    font-size: xx-large;
+ }

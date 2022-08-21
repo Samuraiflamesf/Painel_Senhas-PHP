@@ -1,6 +1,6 @@
 <div align="center">
   
-# Sistema PainelPassword 📁 <a href="#">Link da Aplicação</a>
+# Sistema PainelPassword 📁
 
 </div>
 

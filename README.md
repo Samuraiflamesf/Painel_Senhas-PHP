@@ -1,6 +1,6 @@
 <div align="center">
   
-# Sistema PainelPassword 📁
+# Sistema de Controle de Senhas 📁
 
 </div>
 
